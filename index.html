@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affirmations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="ambient-overlay" id="ambient-overlay"></div>
+
+    <div class="container">
+        <h1>Affirmations</h1>
+
+        <div class="controls">
+            <button id="library-btn" class="icon-btn">lib</button>
+            <button id="ambient-btn" class="icon-btn">amb</button>
+        </div>
+
+        <div class="card-container">
+            <div class="card" id="card">
+                <div class="bookmark" id="bookmark"></div>
+                <div class="card-front">
+                    <p id="quote-text"></p>
+                </div>
+                <div class="card-back">
+                    <p id="reflection-text"></p>
+                    <textarea id="journal-input" placeholder="Write your thoughts"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="favorite-btn">⭐ Favorite</button>
+            <button id="next-btn">Next</button>
+        </div>
+    </div>
+
+    <div class="library-panel" id="library-panel">
+        <div class="library-header">
+            <h2>Saved Cards</h2>
+            <button id="close-library">✕</button>
+        </div>
+        <div class="library-shelf" id="library-shelf"></div>
+    </div>
+
+    <div class="ambient-menu" id="ambient-menu">
+        <button data-ambient="none">None</button>
+        <button data-ambient="rain">Rain</button>
+        <button data-ambient="library">Library</button>
+        <button data-ambient="candle">Candle</button>
+    </div>
+
+    <script src="data/quotes.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
