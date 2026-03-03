@@ -11,20 +11,45 @@ const bookmark = document.getElementById('bookmark');
 const ambientBtn = document.getElementById('ambient-btn');
 const ambientMenu = document.getElementById('ambient-menu');
 const ambientOverlay = document.getElementById('ambient-overlay');
-const journalInput = document.getElementById('journal-input');
 
 const rainSound = document.getElementById('rain-sound');
 
-let currentIndex = -1;
+const reflections = [
+    "What made you feel worthy today?",
+    "Which thought served you best today?",
+    "Where can you practice more patience?",
+    "What small step did you take toward growth today?",
+    "What abundance are you grateful for right now?",
+    "What are you ready to let go of?",
+    "How does this moment serve your journey?",
+    "What would you do if you knew you couldn't fail?"
+];
+
 let currentQuote = null;
 let savedCards = JSON.parse(localStorage.getItem('savedCards')) || [];
 
-function getRandomIndex() {
-    let newIndex;
-    do {
-        newIndex = Math.floor(Math.random() * quotes.length);
-    } while (newIndex === currentIndex && quotes.length > 1);
-    return newIndex;
+async function loadCard() {
+    try {
+        const response = await fetch('https://www.affirmations.dev/');
+        const data = await response.json();
+        currentQuote = {
+            quote: data.affirmation,
+            reflection: reflections[Math.floor(Math.random() * reflections.length)]
+        };
+        typeWriter(quoteText, currentQuote.quote);
+        reflectionText.textContent = currentQuote.reflection;
+        card.classList.remove('flipped');
+        updateBookmark();
+    } catch (error) {
+        currentQuote = {
+            quote: "I am worthy of all the good things that come into my life.",
+            reflection: "What made you feel worthy today?"
+        };
+        typeWriter(quoteText, currentQuote.quote);
+        reflectionText.textContent = currentQuote.reflection;
+        card.classList.remove('flipped');
+        updateBookmark();
+    }
 }
 
 function typeWriter(element, text, speed = 50) {
@@ -40,16 +65,6 @@ function typeWriter(element, text, speed = 50) {
     type();
 }
 
-function loadCard() {
-    currentIndex = getRandomIndex();
-    currentQuote = quotes[currentIndex];
-    typeWriter(quoteText, currentQuote.quote);
-    reflectionText.textContent = currentQuote.reflection;
-    journalInput.value = '';
-    card.classList.remove('flipped');
-    updateBookmark();
-}
-
 function updateBookmark() {
     const isSaved = savedCards.some(c => c.quote === currentQuote.quote);
     bookmark.classList.toggle('visible', isSaved);
@@ -61,8 +76,7 @@ function saveCard() {
     if (!exists) {
         savedCards.push({
             quote: currentQuote.quote,
-            reflection: currentQuote.reflection,
-            journal: journalInput.value
+            reflection: currentQuote.reflection
         });
         localStorage.setItem('savedCards', JSON.stringify(savedCards));
         updateBookmark();
@@ -85,7 +99,6 @@ function renderLibrary() {
         cardEl.innerHTML = `
             <button class="delete-btn">✕</button>
             <p><strong>"${card.quote}"</strong></p>
-            ${card.journal ? `<p style="margin-top:10px; font-size:0.9rem;">${card.journal}</p>` : ''}
         `;
         cardEl.querySelector('.delete-btn').addEventListener('click', (e) => {
             e.stopPropagation();
