@@ -1,0 +1,30 @@
+{
+  "name": "manifestation",
+  "version": "1.0.0",
+  "description": "A minimalist web application designed to facilitate emotional reflection through manifestation affirmations. The application features interactive flip cards, a personal library system, and ambient audio functionality, providing users with a contemplative digital space for mindfulness practice.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khanaaaaaa/Paper-Becoming.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/khanaaaaaa/Paper-Becoming/issues"
+  },
+  "homepage": "https://github.com/khanaaaaaa/Paper-Becoming#readme",
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3"
+  }
+}

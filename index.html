@@ -12,32 +12,80 @@
     <div class="container">
         <h1>Affirmations</h1>
 
-        <div class="controls">
-            <button id="library-btn" class="icon-btn">📚</button>
-            <button id="ambient-btn" class="icon-btn">🌙</button>
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="affirmations">Affirmations</button>
+            <button class="tab-btn" data-tab="meditation">Meditation</button>
         </div>
 
-        <div class="card-container">
-            <div class="card" id="card">
-                <div class="bookmark" id="bookmark"></div>
-                <div class="card-front">
-                    <p id="quote-text"></p>
-                </div>
-                <div class="card-back">
-                    <p id="reflection-text"></p>
+        <div class="tab-content" id="tab-affirmations">
+            <div class="controls">
+                <button id="library-btn" class="icon-btn">📚</button>
+                <button id="ambient-btn" data-tab="icon-btn">🌙</button>
+            </div>
+
+            <div class="card-container">
+                <div class="card" id="card">
+                    <div class="bookmark" id="bookmark"></div>
+                    <div class="card-font">
+                        <p id="reflection-text"></p>
+                    </div>
                 </div>
             </div>
+
+            <div class="buttons">
+                <button id="favorite-btn">Favorite</button>
+                <button id="next-btn">Next</button>
+            </div>
         </div>
-        <div class="buttons">
-            <button id="favorite-btn">Favorite</button>
-            <button id="next-btn">Next</button>
+
+        <div class="tab-content hidden" id="tab-meditation">
+            <div class="meditation-timer">
+                <p class="timer-label">Session Timer</p>
+                <div class="timer-display" id="timer-display">05:00</div>
+                <div class="timer-controls">
+                    <button class="timer-btn" data-time="300">5 min</button>
+                    <button class="timer-btn" data-tume="600">10 min</button>
+                    <button class="timer-btn" data-time="900">15 min</button>
+                </div>
+                <div class="timer-actions">
+                    <button id="timer-start">Begin</button>
+                    <button id="timer-reset">Reset</button>
+                </div>
+            </div>
+
+            <div class="meditation-breathing">
+                <p class="section-label">Breathing Guide</p>
+                <div class="breath-circle" id="breath-circle">
+                    <span id="breath-text">Inhale</span>
+                </div>
+                <button id="breath-start">Start Breathing</button>
+            </div>
+
+            <div class="meditation-rules">
+                <p class="section-label">Breathing Guide</p>
+                <div class="breath-circle" id="breath-circle">
+                    <span id="breath-text">Inhale</span>
+                </div>
+                <button id="breath-start">Start Breathing</button>
+            </div>
+
+            <div class="meditation-rules">
+                <p class="section-label">Principles</p>
+                <ol>
+                    <li>Find a quiet, comfortable position and close your eyes.</li>
+                    <li>Breathe naturally and observe without judgement.</li>
+                    <li>When the mind wanders, ently return to your breath.</li>
+                    <li>Let thoughts pass like clouds - do not hold them.</li>
+                    <li>Sit with stillness for the full duration of your session.</li>
+                    <li>End each session with a moment of gratitude.</li>
+                </ol>
+            </div>
         </div>
     </div>
 
     <div class="library-panel" id="library-panel">
         <div class="library-header">
             <h2>Saved Cards</h2>
-            <button id="close-library">✕</button>
         </div>
         <div class="library-shelf" id="library-shelf"></div>
     </div>
@@ -53,4 +101,3 @@
 
     <script src="script.js"></script>
 </body>
-</html>

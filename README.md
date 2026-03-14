@@ -1,4 +1,4 @@
-# Paper-Becoming
+# PaperXBecoming
 
 A minimalist web application designed to facilitate emotional reflection through manifestation affirmations. The application features interactive flip cards, a personal library system, and ambient audio functionality, providing users with a contemplative digital space for mindfulness practice.
 
@@ -8,8 +8,8 @@ A minimalist web application designed to facilitate emotional reflection through
 
 ## Features
 
-- **Interactive Flip Cards** - Click-to-reveal interface displaying reflection prompts
-- **Personal Library** - Persistent storage system for favorite affirmations
+- **Interactive Flip Cards**
+- **Personal Library**
 - **Visual Bookmarks** - Ribbon indicators for saved content
 - **Typewriter Animation** - Progressive text rendering for enhanced readability
 - **Ambient Audio Mode** - Rain soundscape with visual overlay effects
@@ -20,7 +20,7 @@ A minimalist web application designed to facilitate emotional reflection through
 - HTML5
 - CSS3
 - Vanilla JavaScript
-- [Affirmations API](https://www.affirmations.dev/)
+- [ZenQuotes API](https://zenquotes.io/)
 
 ## User Instructions
 
