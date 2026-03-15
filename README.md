@@ -34,3 +34,7 @@ The biggest thing I learned is that debugging your own code after you've been st
 - CSS flip cards looked simple but `backface-visibility` behaves inconsistently across browsers. Small thing, annoying to debug.
 
 Thought it would be a short project but took more time than it should have. Regardless loved making it despite the errors. "Good things come with time" as they say.
+
+## AI Usage
+
+ChatGPT for debugging.
